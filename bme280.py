@@ -1,5 +1,5 @@
 # Authors:
-#        Andrej Trnkoci
+#        Andrej Trnkoci (Andrissk)
 #
 # Copyright (c) 2018 GPL3 Licensed
 #
