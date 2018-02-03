@@ -32,7 +32,8 @@ def bme280_set_normal_mode(bus, address):
     bus.write_byte_data(address, 0xF4, 0x27)
 
 def bme280_measure_forced(bus, address):
-    bus.write_byte_data(address, 0xF4, 0x26) #initiate forced conversion
+    bus.write_byte_data(address, 0xF2, 0x01) #set oversampling x1 for humidity (default is skip measurement)
+    bus.write_byte_data(address, 0xF4, 0x26) #initiate forced conversion (also set oversampling x1 for temp and press)
     conversionInProgress = 0x2
     while conversionInProgress:
         conversionInProgress = bus.read_byte_data(address, 0xF4) & 0x2
